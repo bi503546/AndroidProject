@@ -1,0 +1,2 @@
+include ':myphoneapp', ':tp2'
+rootProject.name='premierTP'

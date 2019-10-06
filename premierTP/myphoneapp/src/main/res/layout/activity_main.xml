@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Calculatrice" >
+
+    <Button
+        android:id="@+id/buttonClear"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="onClear"
+        android:text="@string/c"
+        android:textColor="@color/orange"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/button7"
+        app:layout_constraintEnd_toStartOf="@+id/buttonParenthes"
+        app:layout_constraintHeight_percent="0.13"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.25"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/buttonPourcentage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/poucentage"
+        android:textColor="@color/vert"
+        android:textSize="24sp"
+        android:onClick="onOperator"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonDiv"
+        app:layout_constraintEnd_toStartOf="@+id/buttonDiv"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintHeight_percent="0.13"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/buttonParenthes"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="onOperator"
+        android:text="@string/parnthese"
+        android:textColor="@color/vert"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/button9"
+        app:layout_constraintEnd_toStartOf="@+id/buttonPourcentage"
+        app:layout_constraintHeight_percent="0.13"
+        app:layout_constraintWidth_percent="0.25"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.13"
+        android:text="@string/_7"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:onClick="onDigit"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintEnd_toStartOf="@+id/button5"
+        tools:ignore="MissingConstraints"
+        />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.13"
+        android:text="@string/_8"
+        android:textColor="@color/black"
+        android:onClick="onDigit"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/button6"
+        app:layout_constraintEnd_toStartOf="@+id/button9"
+        app:layout_constraintWidth_percent="0.25"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.13"
+        android:text="@string/_9"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:onClick="onDigit"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSous"
+        app:layout_constraintEnd_toStartOf="@+id/buttonMult"
+        app:layout_constraintWidth_percent="0.25"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/buttonMult"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.13"
+        android:text="@string/mult"
+        android:textColor="@color/vert"
+        android:onClick="onOperator"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSous"
+        app:layout_constraintEnd_toEndOf="@+id/buttonSous"
+        app:layout_constraintStart_toStartOf="@+id/buttonSous"
+        app:layout_constraintWidth_percent="0.25"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/buttonDiv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.13"
+        android:text="@string/division"
+        android:textColor="@color/vert"
+        android:textSize="24sp"
+        android:onClick="onOperator"
+        app:layout_constraintWidth_percent="25"
+        app:layout_constraintBottom_toTopOf="@+id/buttonMult"
+        app:layout_constraintEnd_toEndOf="@+id/buttonMult"
+        app:layout_constraintStart_toStartOf="@+id/buttonMult"
+        tools:ignore="MissingConstraints"/>
+
+    <Button
+        android:id="@+id/buttonSous"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.13"
+        android:text="@string/soust"
+        android:textColor="@color/vert"
+        android:onClick="onOperator"
+        android:textSize="24sp"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintBottom_toTopOf="@+id/buttonPlus"
+        app:layout_constraintEnd_toEndOf="@+id/buttonPlus"
+        app:layout_constraintStart_toStartOf="@+id/buttonPlus"/>
+
+    <Button
+        android:id="@+id/buttonPlus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.13"
+        android:text="@string/plus"
+        android:textSize="24sp"
+        android:textColor="@color/vert"
+        android:onClick="onOperator"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintBottom_toTopOf="@+id/buttonOk"
+        app:layout_constraintEnd_toEndOf="@+id/buttonOk"
+        app:layout_constraintStart_toStartOf="@+id/buttonOk"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/buttonOk"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/vert"
+        android:onClick="onEqual"
+        android:text="@string/egal"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.13"
+        app:layout_constraintWidth_percent="0.25"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.13"
+        android:text="@string/_4"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintWidth_percent="0.25"
+        android:onClick="onDigit"
+        app:layout_constraintBottom_toTopOf="@id/button1"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.13"
+        android:text="@string/_6"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:onClick="onDigit"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSous"
+        app:layout_constraintWidth_percent="0.25"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.13"
+        android:text="@string/_1"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:onClick="onDigit"
+        app:layout_constraintBottom_toTopOf="@+id/button0"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintWidth_percent="0.25"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.13"
+        android:text="@string/_2"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintWidth_percent="0.25"
+        android:onClick="onDigit"
+        app:layout_constraintBottom_toTopOf="@+id/button0"
+        app:layout_constraintEnd_toStartOf="@+id/button3" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.13"
+        android:text="@string/_3"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:onClick="onDigit"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintBottom_toTopOf="@+id/buttonVirgule"
+        app:layout_constraintEnd_toStartOf="@+id/buttonPlus"
+        />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.13"
+        android:text="@string/_5"
+        android:onClick="onDigit"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintBottom_toTopOf="@id/button2"
+        app:layout_constraintEnd_toStartOf="@+id/button6" />
+
+    <Button
+        android:id="@+id/button0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.13"
+        android:onClick="onDigit"
+        android:text="@string/_0"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonVirgule"
+        app:layout_constraintEnd_toStartOf="@+id/buttonVirgule"
+        app:layout_constraintWidth_percent="0.25"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/buttonVirgule"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.13"
+        android:text="@string/virgule"
+        android:textColor="@color/black"
+        android:onClick="onDecimalPoint"
+        android:textSize="24sp"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonOk" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="421dp"
+        android:layout_height="129dp"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.30"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="421dp"
+        android:layout_height="129dp"
+        android:text="@string/resultat"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonParenthes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.30"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/effacer"
+        android:onClick="onDelete"
+        app:layout_constraintBottom_toBottomOf="@+id/button0"
+        app:layout_constraintEnd_toStartOf="@+id/button0"
+        app:layout_constraintWidth_percent="0.25"
+        app:srcCompat="@android:drawable/ic_input_delete"
+        app:layout_constraintHeight_percent="0.13"
+        tools:ignore="MissingConstraints"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">tp2</string>
+    <string name="textview">TextView</string>
+    <string name="todo">TODO</string>
+    <string name="titre">titre</string>
+    <string name="description">description</string>
+
+    <string-array name="planetes">
+        <item>Mercure</item>
+        <item>Venus</item>
+        <item>Terre</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturne</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+        <item>Pluton</item>
+    </string-array>
+
+</resources>
