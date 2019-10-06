@@ -11,17 +11,22 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.tp2.ArticleAdapter
+import com.example.tp2.adaptateur.ArticleAdapter
 import com.example.tp2.R
-import com.example.tp2.adaptateur.Article
 import com.example.tp2.network.repository.ArticleRepository
+
+
 
 class ArticlesFragment : Fragment()
 {
     lateinit var spinner: Spinner
+    private val articleRepository = ArticleRepository()
+    private lateinit var root:View
     lateinit var adapter: ArrayAdapter<String>
     lateinit var recyclerView: RecyclerView
-    /**   * Ici, on associe le layout à afficher dans le fragment    */
+    /**
+     * * Ici, on associe le layout à afficher dans le fragment
+     * */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?   ): View? {
@@ -32,7 +37,9 @@ class ArticlesFragment : Fragment()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         bindView(view)
+
     }
+
 
     private fun bindView(root:View) {
         //recupérer une liste de string depuis les ressources
@@ -61,27 +68,15 @@ class ArticlesFragment : Fragment()
                     "Vous avez selectionné ${planetes[position]}",
                     Toast.LENGTH_LONG
                 ).show()
-                println("${planetes[position]} choisi !!!!!!!!!!!!!!!!!!!!!")
             }
         }
         recyclerView = root.findViewById(R.id.reycler_view)
         // créer une liste d'articles
-        val articles = listOf<Article>(
-            Article("cccc",
-                "Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass one-thousandth that of the Sun, but two-and-a-half times that of all the other planets in the Solar System combined. Jupiter has been known to astronomers since antiquity."
-            ),
-            Article(
-                "Earth",
-                "Earth is the third planet from the Sun and the only astronomical object known to harbor life."
-            )
-            ,
-            Article("toto", "toto toot totot tot t")
-        )
-
+        val articles  = articleRepository.list()
         //instance du recycler
 
         // créer une instance de l'adapteur
-        var adapterRecycler = ArticleAdapter(articles)
+        var adapterRecycler = ArticleAdapter(articles.articles)
         // définir l'orientation des élements (vertical)
         recyclerView.layoutManager = LinearLayoutManager(root.context)
         // associer l'adapter à la recyclerview
@@ -89,5 +84,5 @@ class ArticlesFragment : Fragment()
         }
 
 
-    }
 
+}

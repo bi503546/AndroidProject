@@ -1,19 +1,24 @@
 package com.example.tp2.network.repository
 
-import com.example.tp2.adaptateur.Article
+import com.example.tp2.models.ArticleResponse
 import com.example.tp2.network.ArticleService
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
-class ArticleRepository (){
+class ArticleRepository {
     private val service: ArticleService
+    private val baseUrl = "https://newsapi.org/v2/"
+
     init {
-        val retrofit = Retrofit.Builder().apply {
-            baseUrl("[URL]")
-        }.build()
+        var retrofit = Retrofit.Builder()
+            .baseUrl(baseUrl)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
         service = retrofit.create(ArticleService::class.java)
     }
-    fun list(): List<Article> {
-        val response =  service.list().execute()
-        return response.body() ?: emptyList()
+
+    fun list(): ArticleResponse {
+        val response = service.list().execute()
+        return response.body() ?: ArticleResponse("", 0, ArrayList())
     }
 }
