@@ -3,15 +3,23 @@ package com.example.premiertp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.animation.TranslateAnimation
 import android.widget.Button
 import android.widget.TextView
 import java.util.logging.Logger
 import net.objecthunter.exp4j.ExpressionBuilder
+import java.util.*
+import kotlin.collections.ArrayList
 
 class Calculatrice : AppCompatActivity() {
+    var arrayHistorique = Collections.synchronizedList(ArrayList<String>())
+
     val Log = Logger.getLogger(Calculatrice::class.java.name)
+    lateinit var boutonHistorique: Button
     lateinit var operations: TextView
+    lateinit var vueHistorique: View
     lateinit var res: TextView
+    var isUp: Boolean = false
 
     var lastNumeric: Boolean = false
     var stateError: Boolean = false
@@ -91,6 +99,41 @@ class Calculatrice : AppCompatActivity() {
 
     fun onDelete (view: View){
         this.operations.text = this.operations.text.dropLast(1)
+    }
+
+    fun slideDown(view: View) {
+        val animate = TranslateAnimation(
+            0f,
+            0f,
+            0f,
+            view.height.toFloat())
+        animate.duration = 500
+        animate.fillAfter = true
+        view.startAnimation(animate)
+    }
+
+    fun slideUp(view: View) {
+        view.visibility = View.VISIBLE
+        val animate = TranslateAnimation(
+            0f,
+            0f,
+            view.height.toFloat(),
+            0f)
+        animate.duration = 500
+        animate.fillAfter = true
+        view.startAnimation(animate)
+
+    }
+
+    fun onSlideViewButtonClick(view: View) {
+        if (isUp) {
+            slideDown(vueHistorique)
+            boutonHistorique.setText("Historique")
+        } else {
+            slideUp(vueHistorique)
+            boutonHistorique.setText("Cacher historique")
+        }
+        isUp = !isUp
     }
 
 

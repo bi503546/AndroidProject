@@ -276,16 +276,30 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonOk" />
 
+    <Button
+        android:id="@+id/tvHistory"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:ellipsize="start"
+        android:gravity="end"
+        android:singleLine="true"
+        android:textColor="@color/numberButton"
+        android:textSize="20sp"
+        android:onClick="onSlideViewButtonClick"
+        android:text="Historique"
+        tools:ignore="MissingConstraints" />
+
     <TextView
         android:id="@+id/textView"
-        android:layout_width="421dp"
-        android:layout_height="129dp"
+        android:layout_width="352dp"
+        android:layout_height="69dp"
         android:text=""
         android:textColor="@color/black"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="0.30"
         tools:ignore="MissingConstraints" />
 
